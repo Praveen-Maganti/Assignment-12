@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    .background{
+        height:70vh;
+        width:100vw;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        font-family:"Roboto";
+        
+    }
+    .div-1{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        gap:25px;
+    }
+    .p1{
+        font-size:20px;
+    }
+   
+    .div-2{
+        border:2px solid black;
+        padding:30px;
+        width:40vw;
+        
+    }
+    .p2{
+        font-size: 25px;
+    }
+    .btn{
+        background-color:grey;
+        color:white;
+        width:10vw;
+        height:5vh;
+        font-size:20px;
+        border-radius:20px;;
+    }
+    .I{
+        height:4vh;
+        min-width:10vw;
+        font-size:15px;
+    }
+</style>
+<script type="text/javascript">
+
+     function Multiply(){  
+        let I1 = document.getElementById("1stNum").value;
+        let I2 = document.getElementById("2ndNum").value;
+        let Output = document.getElementById("Output");
+
+        Output.textContent = parseFloat(I1) * parseFloat(I2);
+    }
+
+    function Divide(){
+        let I1 = document.getElementById("1stNum").value;
+        let I2 = document.getElementById("2ndNum").value;
+        let Output = document.getElementById("Output");
+
+        if (parseFloat(I2) === 0) {
+            Output.textContent = "Error: Division by zero";
+        } else {
+            Output.textContent = (parseFloat(I1) / parseFloat(I2)).toFixed(4);
+        }
+    }
+</script>
+
+<body>
+
+    <div class="background">
+        <div class="div-2">
+            <div class="div-1">
+                <p class="p1">1st Number: </p>
+                <input type="text" id="1stNum" class="I">
+            </div>
+            <div class="div-1">
+                <p class="p1">2nd Number: </p>
+                <input type="text" id="2ndNum" class="I">
+            </div>
+            <div class="div-1">
+                <button class="btn" onclick="Multiply()">Multiply</button>
+                <button class="btn" onclick="Divide()">Divide</button>
+            </div>
+
+            <p class="p2">The Result Is: </p>
+            <p class="p2" id="Output"></p>
+        </div>
+
+    </div>
+
+</body>
+</html>
